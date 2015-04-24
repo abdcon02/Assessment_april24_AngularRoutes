@@ -10,7 +10,7 @@
             <div ng-show='studentsPresent.length'>
                 <h4>Students Present</h4>
                 <ul>
-                    <li ng-repeat='item in studentsPresent = (students | filter:signIn=true)'>
+                    <li ng-repeat='item in studentsPresent = (students | filter:inClass=true)'>
                         {{ item.name }}
                     </li>
                 </ul>
@@ -18,7 +18,7 @@
             <div ng-show='studentsAbsent.length'>
                 <h4>Students Absent</h4>
                 <ul>
-                    <li ng-repeat='item in studentsAbsent = (students | filter:signIn=False)'>
+                    <li ng-repeat='item in studentsAbsent = (students | filter:inClass=false)'>
                         {{ item.name }}
                     </li>
                 </ul>
