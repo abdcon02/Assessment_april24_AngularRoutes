@@ -2,3 +2,27 @@
 
 <a ui-sref='signInPage'>SignIn</a>
 <a ui-sref='home'>Home</a>
+
+<div class='row'>
+    <div class='col-md-6'>
+        <div ng-controller="StudentsCtrl">
+
+            <div ng-show='studentsPresent.length'>
+                <h4>Students Present</h4>
+                <ul>
+                    <li ng-repeat='item in studentsPresent = (students | filter:signIn=true)'>
+                        {{ item.name }}
+                    </li>
+                </ul>
+            </div>
+            <div ng-show='studentsAbsent.length'>
+                <h4>Students Absent</h4>
+                <ul>
+                    <li ng-repeat='item in studentsAbsent = (students | filter:signIn=False)'>
+                        {{ item.name }}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
