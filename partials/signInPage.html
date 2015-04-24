@@ -1,21 +1,25 @@
-<h1>SignIn</h1>
-
-<a ui-sref='home'>Home</a>
-<a ui-sref='attendance'>Attendance</a>
 
 <div class='row'>
     <div class='col-md-6'>
+        <h1 class='jumbotron'>Lizz Frizzle's Class</h1>
+        <h2>SignIn</h2>
+    </div>
+</div>
+<div class='row'>
+    <div class="col-md-4">
+        <a class='btn btn-default' ui-sref='home'>Home</a>
+        <a class='btn btn-default' ui-sref='attendance'>Attendance</a>
         <div ng-controller='StudentsCtrl'>
             <h4>Class Roster</h4>
             <ul>
                 <li ng-repeat='item in students'>
                     <span class="glyphicon glyphicon-ok" ng-show='item.inClass'></span>
                     <span class="glyphicon glyphicon-remove" ng-show='!item.inClass'></span>
-                    {{ item.name }}
                     <button class='btn btn-info btn-xs' ng-click="changeAttendance(item)">
                         <span ng-show='!item.inClass'>Sign In</span>
                         <span ng-show='item.inClass'>Sign Out<span>
                     </button>
+                    {{ item.name }}
                 </li>
             </ul>
         </div>

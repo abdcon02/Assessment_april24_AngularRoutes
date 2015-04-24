@@ -1,3 +1,12 @@
 ul {
     list-style: none;
 }
+
+.jumbotron {
+    background-image: url(../images/banner.jpeg);
+    background-size: 460px 170px;
+}
+
+h1 {
+    font-weight: bold;
+}
