@@ -9,9 +9,12 @@
             <h4>Class Roster</h4>
             <ul>
                 <li ng-repeat='item in students'>
+                    <span class="glyphicon glyphicon-ok" ng-show='item.inClass'></span>
+                    <span class="glyphicon glyphicon-remove" ng-show='!item.inClass'></span>
                     {{ item.name }}
                     <button class='btn btn-info btn-xs' ng-click="changeAttendance(item)">
-                        Do something
+                        <span ng-show='!item.inClass'>Sign In</span>
+                        <span ng-show='item.inClass'>Sign Out<span>
                     </button>
                 </li>
             </ul>
